@@ -8,23 +8,29 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class SortingNumbers_2751 {
+	
+	static int temp[];
 
 	public static void main(String[] args) throws IOException {
 		
 		int arr[]; // 입력받은 숫자 저장
 		int num; // 숫자의 갯수
-		String result = "";
+		
+		
 		BufferedReader reader;
 		BufferedWriter writer;
+		StringBuilder builder;
 		
 		reader = new BufferedReader(new InputStreamReader(System.in));
 		writer = new BufferedWriter(new OutputStreamWriter(System.out));
+		builder = new StringBuilder();
 	
 		writer.write("입력: ");
 		writer.flush();
 		num = Integer.parseInt(reader.readLine());
 		
 		arr = new int[num]; // 갯수에 따른 배열의 크기
+		temp = new int[num];
 		
 		for(int i=0; i<num; i++) {
 			
@@ -36,14 +42,15 @@ public class SortingNumbers_2751 {
 		
 		//bubbleSort(arr);
 		//sellectionSort(arr);
-		insertSort(arr);
+		//insertSort(arr);
+		mergeSort(arr, 0, arr.length-1);
 		
 		
 		for(int i=0; i<arr.length; i++) {
-			result += arr[i] + "\n"; //문자열로 저장
+			builder.append(arr[i] + "\n"); //문자열로 저장
 		}
 		
-		writer.write(result); //결과 출력
+		System.out.println(builder); //결과 출력
 		
 		reader.close();
 		writer.close();
@@ -52,6 +59,54 @@ public class SortingNumbers_2751 {
 		
 	}//main
 	
+	private static void mergeSort(int[] arr, int left, int right) {
+
+		int mid; //배열 중앙
+		
+		if(left < right) {
+			mid = (left+right)/2;
+			
+			mergeSort(arr, left, mid);
+			mergeSort(arr, mid+1, right);
+			mergeSort(arr, left, mid, right);
+			
+			
+		}
+		
+	}
+
+	private static void mergeSort(int[] arr, int left, int mid, int right) {
+		
+		int part1 = left;
+		int part2 = mid+1;
+		int index = left;
+		
+		while(part1 <= mid && part2<=right) {
+			if(arr[part1] <= arr[part2]) {
+				temp[index] = arr[part1++];
+			} else {
+				temp[index] = arr[part2++];
+			}
+			index++;
+		}
+		
+		if(part1 > mid) {
+			for(int i=part2; i<=right; i++, index++) {
+				temp[index] = arr[i];
+			}
+		} else {
+			for(int i=part1; i<=mid; i++, index++) {
+				temp[index] = arr[i];
+			}
+		}
+		
+		for(int i=left; i <= right; i++) {
+			arr[i] = temp[i];
+		}
+			
+	}
+	
+
 	public static void insertSort(int[] arr) {
 		
 		for(int i=1; i<arr.length; i++) {
