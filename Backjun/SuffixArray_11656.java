@@ -1,9 +1,9 @@
-package backjun.java;
+package Backjun;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main_11656 {
+public class SuffixArray_11656 {
 
 	public static void main(String[] args) {
 		

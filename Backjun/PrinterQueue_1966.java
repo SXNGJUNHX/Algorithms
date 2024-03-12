@@ -1,4 +1,4 @@
-package backjun.java;
+package Backjun;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main_1966 {
+public class PrinterQueue_1966 {
 
 	static int t; // 테스트 케이스 수
 	static int n; // 문서의 개수

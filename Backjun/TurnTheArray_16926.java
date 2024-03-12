@@ -1,8 +1,8 @@
-package backjun.java;
+package Backjun;
 
 import java.util.Scanner;
 
-public class Main_16926 {
+public class TurnTheArray_16926 {
 
 	public static void main(String[] args) {
 		
