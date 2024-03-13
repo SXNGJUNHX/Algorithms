@@ -77,8 +77,7 @@ public class MemorizingEnglishwordsishard_20920 {
 		}
 		
 		// Key값이 해당 영단어만 뽑은 List
-		List<String> wordList = word.keySet().stream().collect(Collectors.toList());
-		
+		List<String> wordList = word.keySet().stream().collect(Collectors.toList()); //ArrayList 반환
 		wordList.sort((o1, o2) -> {
 			int c1 = word.get(o1); // 빈도수
 			int c2 = word.get(o2); // 빈도수
