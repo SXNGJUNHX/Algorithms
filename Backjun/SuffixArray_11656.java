@@ -10,7 +10,7 @@ public class SuffixArray_11656 {
 		String input;
 		StringBuffer temp;
 		String[] arr;
-		//System.out.print("입력: ");
+		System.out.print("입력: ");
 		Scanner scan = new Scanner(System.in);
 		
 		
