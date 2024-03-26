@@ -36,7 +36,7 @@ public class Resignation_14501 {
         dp = new int[count+1];
 
         for(int i=0; i<count; i++){
-            if(i+t[i] < count){
+            if(i+t[i] <= count){
                 dp[i + t[i]] = Math.max(dp[i + t[i]], dp[i] + p[i]);
             }
             dp[i+1] = Math.max(dp[i+1], dp[i]);
