@@ -15,14 +15,14 @@ public class Blackjack_2798 {
 		
 		int n; // 카드의 갯수
 		int m; // 최대값
-		String result; //배열의 위치
+		int result; //배열의 위치
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st;
 
-		writer.write("입력: ");
-		writer.flush();
+		//writer.write("입력: ");
+		//writer.flush();
 		st = new StringTokenizer(reader.readLine());
 		
 		n = Integer.parseInt(st.nextToken());
@@ -35,11 +35,13 @@ public class Blackjack_2798 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 
-		result = String.valueOf(search(n, m));
-		System.out.println(result);
+		result = search(n, m);
 		writer.write(result);
 		writer.flush();
-		
+
+		writer.close();
+		reader.close();
+
 	}
 
 	private static int search(int n, int m) {
@@ -48,7 +50,7 @@ public class Blackjack_2798 {
 		
 		for(int i=0; i<n-2; i++) {
 			for(int j=i+1; j<n-1; j++) {
-				for(int k=i+1; k<n; k++) {
+				for(int k=j+1; k<n; k++) {
 					temp = arr[i]+arr[j]+arr[k];
 
 					if(m==temp){
