@@ -1,23 +1,24 @@
 package Backjun;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class SanggeunsTrip_9372 {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-
-        st = new StringTokenizer(reader.readLine());
-
-        int t = Integer.parseInt(st.nextToken()); // 테스트 케이스
-
-        for(int i=0; i<t; i++){
-
+        int T = Integer.parseInt(st.nextToken());
+        for (int i = 0; i < T; i++) {
+            st = new StringTokenizer(br.readLine(), " ");
+            int N = Integer.parseInt(st.nextToken());
+            int M = Integer.parseInt(st.nextToken());
+            for (int j = 0; j < M; j++) {
+                st = new StringTokenizer(br.readLine(), " ");
+            }
+            System.out.println(N - 1); // 간선의 갯수 = 정점의 개수 -1
         }
     }
 }
